@@ -6,7 +6,6 @@ import "./Public.css";
 class Login extends Component {
     render() {
         return (
-            <React.Fragment>
             <form className="form-signin">
                 <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
                 <label htmlFor="inputEmail" className="sr-only">Email address</label>
@@ -21,7 +20,6 @@ class Login extends Component {
                 <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
                 <p className="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
           </form>
-          </React.Fragment>
         );
     }
 }
