@@ -26,8 +26,6 @@ class Login extends Component {
             password: this.password,
         })
 
-        console.log(response);
-
         this.setState({
             redirect: true
         })

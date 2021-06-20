@@ -16,8 +16,7 @@ export default class Wrapper extends Component {
         try {
 
             const response = await axios.get('user');
-    
-            console.log(response)
+            
         }catch (e) {
             this.setState({
                 redirect: true
