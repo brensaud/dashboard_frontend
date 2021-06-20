@@ -1,36 +1,23 @@
 import React from "react";
+import "./App.css";
 
 import { BrowserRouter, Route } from "react-router-dom";
 
-import "./App.css";
-
-import Nav from './secure/components/Nav';
-
-import Menu from './secure/components/Menu';
 
 import Dashboard from "./secure/Dashboard";
 import Users from "./secure/components/Users";
+import Login from "./public/Login";
 
 function App() {
   return (
-    <React.Fragment>
-
-      <Nav />
-      
-      <div className="container-fluid">
-        <div className="row">
-          <Menu />
-
-          <main role="main" className="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <BrowserRouter>
-                <Route path="/" exact component={Dashboard} />
-                <Route path="/users" component={Users} />
-            </BrowserRouter>
-          </main>
-        </div>
-      </div>
-    </React.Fragment>
+    <div className="App">
+      <BrowserRouter>
+        <Route path="/" exact component={Dashboard} />
+        <Route path="/users" component={Users} />
+        <Route path="/login" component={Login} />
+      </BrowserRouter>
+    </div>
   );
 }
 
-export default App;
+export default App; 

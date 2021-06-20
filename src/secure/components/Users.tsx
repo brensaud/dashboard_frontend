@@ -1,10 +1,13 @@
 import React from 'react'
+import Wrapper from '../Wrapper'
+
+
 
 const Users = () => {
     return (
-        <div>
+        <Wrapper>
             Users works!
-        </div>
+        </Wrapper>
     )
 }
 
