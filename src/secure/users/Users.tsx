@@ -42,6 +42,16 @@ export default class Users extends Component {
         await this.componentDidMount();
     }
 
+    deleteHandler = async (id: number) => {
+        if(window.confirm('Are you sure you want to delete this record?')) {
+            await axios.delete(`users/${id}`);
+
+            this.setState({
+                users: this.state.users.filter((u: User) => u.id !== id)
+            })
+        }
+    }
+
     render() {
         return (
             <Wrapper>
@@ -76,7 +86,10 @@ export default class Users extends Component {
                                 <td>
                                     <div className="btn-group mr-2">
                                         <a href="#" className="btn btn-sm btn-outline-secondary">Edit</a>
-                                        <a href="#" className="btn btn-sm btn-outline-secondary">Delete</a>
+                                        <a href="#" className="btn btn-sm btn-outline-secondary" 
+                                            onClick={() => this.deleteHandler(user.id)}
+                                            >Delete
+                                        </a>
                                     </div>
                                 </td>
                             </tr>
